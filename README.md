@@ -1,3 +1,20 @@
+### 使用
+
+```
+allprojects {
+   repositories {
+      ...
+      maven { url 'https://jitpack.io' }
+   }
+}
+```
+
+```
+dependencies {
+  implementation 'com.github.alanplus:CornerView:1.0'
+}
+```
+
 ###  属性
 
 ```xml
