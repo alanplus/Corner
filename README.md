@@ -1,6 +1,6 @@
 ###  属性
 
-```
+```xml
 <attr name="radius" format="dimension" />
 <attr name="background"/>
 <attr name="background_color" format="color"/>
