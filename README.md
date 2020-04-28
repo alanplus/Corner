@@ -1,6 +1,23 @@
-###  属性
+### 使用
 
 ```
+allprojects {
+   repositories {
+      ...
+      maven { url 'https://jitpack.io' }
+   }
+}
+```
+
+```
+dependencies {
+  implementation 'com.github.alanplus:CornerView:1.0'
+}
+```
+
+###  属性
+
+```xml
 <attr name="radius" format="dimension" />
 <attr name="background"/>
 <attr name="background_color" format="color"/>
