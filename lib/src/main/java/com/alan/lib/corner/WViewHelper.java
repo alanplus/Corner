@@ -63,9 +63,19 @@ public class WViewHelper {
 
         if(orientation != null && start_color != 0 && end_color != 0) {
             gd = new GradientDrawable(orientation, new int[]{start_color, end_color});
+            if(radius != 0)
+                gd.setCornerRadius(radius);
+            else{
+                gd.setCornerRadii(new float[]{radius_l_u, radius_l_u, radius_r_u, radius_r_u, radius_r_d, radius_r_d, radius_l_d, radius_l_d});
+            }
             //gd = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM,new int[]{Color.RED,Color.YELLOW});
         }else{
             gd = new GradientDrawable();
+            if(radius != 0)
+                gd.setCornerRadius(radius);
+            else{
+                gd.setCornerRadii(new float[]{radius_l_u, radius_l_u, radius_r_u, radius_r_u, radius_r_d, radius_r_d, radius_l_d, radius_l_d});
+            }
             int tempBackground = backgroundColor;
             if(tempBackground == 0 && backgroundColorRes != 0) {
                 tempBackground = ContextCompat.getColor(mView.getContext(), backgroundColorRes);
@@ -76,11 +86,7 @@ public class WViewHelper {
         }
 
         gd.setShape(GradientDrawable.RECTANGLE);// 圆角
-        if(radius != 0)
-            gd.setCornerRadius(radius);
-        else{
-            gd.setCornerRadii(new float[]{radius_l_u, radius_l_u, radius_r_u, radius_r_u, radius_r_d, radius_r_d, radius_l_d, radius_l_d});
-        }
+
 
         if(stroke_width != 0) {
             if(stroke_width<1)stroke_width = 1;
